@@ -11,11 +11,11 @@ claude-memories is a **Layer 2 adapter** in the Knowledge OS stack:
 
 | Layer | Package | Role |
 |-------|---------|------|
-| Kernel | `@mcptoolshop/ai-loadout` | Routing types, matching, validation, hierarchical resolution |
+| Kernel | `@mcptoolshop/ai-loadout` | Dispatch table, matching, resolver, agent runtime |
 | Adapter | `@mcptoolshop/claude-rules` | CLAUDE.md optimization — converts rule files to dispatch tables |
 | Adapter | `@mcptoolshop/claude-memories` | MEMORY.md optimization — converts memory files to dispatch tables |
 
-Same kernel, different document types. Both adapters produce compatible `LoadoutIndex` dispatch tables that the kernel can route against.
+Same kernel, different document types. Both adapters produce compatible `LoadoutIndex` dispatch tables that the kernel's resolver and runtime (`planLoad`) can consume.
 
 ## How it works
 
@@ -31,22 +31,31 @@ The output `index.json` is a standard `LoadoutIndex` from ai-loadout:
 
 ```json
 {
-  "version": "1.0",
-  "budget": { "maxTokens": 43127 },
+  "version": "1.0.0",
+  "generated": "2026-03-06T12:00:00Z",
   "entries": [
     {
       "id": "ai-loadout",
-      "name": "AI Loadout",
       "path": "memory/ai-loadout.md",
       "keywords": ["loadout", "routing", "dispatch", "kernel"],
+      "patterns": ["knowledge_routing"],
       "priority": "domain",
-      "tokens": 1850
+      "summary": "Knowledge OS kernel, resolver, agent runtime contract, CLI",
+      "triggers": { "task": true, "plan": true, "edit": false },
+      "tokens_est": 1850,
+      "lines": 147
     }
-  ]
+  ],
+  "budget": {
+    "always_loaded_est": 669,
+    "on_demand_total_est": 42458,
+    "avg_task_load_est": 1370,
+    "avg_task_load_observed": null
+  }
 }
 ```
 
-An agent receives a task, the kernel matches task keywords against entry keywords, and only the matching topic files get loaded into context.
+An agent calls `planLoad("work on ai-loadout")`, the kernel resolves layers, matches task keywords against entry keywords, and returns a load plan with only the matching topic files.
 
 ## Design constraints
 

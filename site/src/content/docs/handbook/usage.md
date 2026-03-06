@@ -94,7 +94,7 @@ triggers:
 | `id` | Unique identifier (defaults to filename) |
 | `keywords` | Override auto-extracted keywords |
 | `patterns` | Named patterns this topic supports |
-| `priority` | `always`, `domain`, `background`, or `manual` |
+| `priority` | `core`, `domain`, or `manual` |
 | `triggers` | Which agent actions trigger this topic |
 
 Without frontmatter, keywords are auto-extracted from the topic name and headings.
