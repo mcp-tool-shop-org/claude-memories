@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 — 2026-03-06
+
+- Update architecture table: kernel role reflects resolver + agent runtime
+- Landing page with Starlight handbook
+
 ## 1.0.1 — 2026-03-06
 
 - Shipcheck audit: all hard gates A-D pass (22/22 items checked)

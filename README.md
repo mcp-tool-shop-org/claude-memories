@@ -141,11 +141,11 @@ claude-memories is a **Layer 2 adapter** in the Knowledge OS stack:
 
 | Layer | Package | Role |
 |-------|---------|------|
-| Kernel | `@mcptoolshop/ai-loadout` | Routing types, matching, validation |
+| Kernel | `@mcptoolshop/ai-loadout` | Dispatch table, matching, resolver, agent runtime |
 | Adapter | `@mcptoolshop/claude-rules` | CLAUDE.md optimization |
 | Adapter | `@mcptoolshop/claude-memories` | MEMORY.md optimization |
 
-Same kernel, different document types. Both produce compatible dispatch tables.
+Same kernel, different document types. Both produce compatible dispatch tables that the kernel's resolver and runtime (`planLoad`) can consume.
 
 ## Security
 
