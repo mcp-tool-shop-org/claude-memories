@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 — 2026-03-06
+
+- Shipcheck audit: all hard gates A-D pass (22/22 items checked)
+- SHIP_GATE.md and SCORECARD.md added
+- GitHub repo metadata: description, topics
+- SCORECARD: 46/50
+
 ## 1.0.0 — 2026-03-06
 
 Initial release.

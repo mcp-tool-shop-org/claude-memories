@@ -1,6 +1,6 @@
 {
   "name": "@mcptoolshop/claude-memories",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MEMORY.md optimizer and dispatch table generator for Claude Code",
   "type": "module",
   "bin": {
@@ -27,6 +27,8 @@
     "CHANGELOG.md",
     "LICENSE",
     "SECURITY.md",
+    "SHIP_GATE.md",
+    "SCORECARD.md",
     "logo.png"
   ],
   "keywords": [
