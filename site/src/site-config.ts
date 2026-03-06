@@ -15,7 +15,7 @@ export const config: SiteConfig = {
     headlineAccent: 'on a diet.',
     description: 'Analyzes your memory files, generates a machine-readable dispatch table, and shows where your context budget goes. 98% token savings on a real 31-topic workspace.',
     primaryCta: { href: '#usage', label: 'Get started' },
-    secondaryCta: { href: '#features', label: 'Learn more' },
+    secondaryCta: { href: 'handbook/', label: 'Read the Handbook' },
     previews: [
       { label: 'Install', code: 'npm install -g @mcptoolshop/claude-memories' },
       { label: 'Analyze', code: 'claude-memories analyze MEMORY.md' },
